@@ -1,5 +1,4 @@
 package UITests;
-
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.Logger;
