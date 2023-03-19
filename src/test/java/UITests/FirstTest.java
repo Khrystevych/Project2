@@ -22,22 +22,16 @@ public class FirstTest extends BaseTest {
     public void createListOfIssues(String title, String comment) {
         HopePage hopePage = new HopePage(this.driver);
         hopePage.goToLoginPage();
-
         LoginPage loginPage = new LoginPage(this.driver);
         loginPage.successfulLogin("Khrystevych", "VladKH999");
-
         MainPage mainPage = new MainPage(this.driver);
         mainPage.goToRepositoryPage();
-
         RepositoryPage repositoryPage = new RepositoryPage(this.driver);
         repositoryPage.goToIssuesPage();
-
         IssuesPage issuesPage = new IssuesPage(this.driver);
         issuesPage.createNewIssue();
-
         NewIssuePage newIssuePage = new NewIssuePage(this.driver);
         newIssuePage.fillOutNewIssue(title, comment);
-
         ListOfIssuesPage listOfIssuesPage = new ListOfIssuesPage(this.driver);
         String ExpectedIssueTitle = "Issue name";
         Assert.assertEquals(listOfIssuesPage.validateTitle(), ExpectedIssueTitle);
